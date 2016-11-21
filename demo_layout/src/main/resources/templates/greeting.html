@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/default">
+<head>
+  <title>Spring Boot and Thymeleaf - Greeting with Thymeleaf Layout Dialect!</title>
+</head>
+<body>
+<!--<section layout:fragment="content">-->
+<section layout:fragment="content">
+  <p th:text="${'Hello ' + name + '! Greeting from Thymeleaf Layout Dialect!'}"></p>
+  <p>This contents from greeting content!</p>
+  <img src="/images/home.png" />
+</section>
+</body>
+</html>
