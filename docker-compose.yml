@@ -1,0 +1,23 @@
+########################################################################################################################
+# 功能: 启动容器
+# 容器:
+#   - discovery:                  服务注册与发现节点
+#   - config-service:             配置服务
+#   - drama-service:              电视剧查询服务
+#   - api-gateway                 API网关
+#   - ui:                         服务消费者
+# 作者: 应卓
+# 日期: 2016-09-17
+########################################################################################################################
+
+thymeleaf:
+  mem_limit: 1000000000
+  image: syuukawa/thymeleaf:latest
+  ports:
+    - 8081:8081
+  volumes:
+    - /tmp:/tmp
+  environment:
+    - SPRING_PROFILES_ACTIVE=docker,security
+    - JAVA_OPTS="-Xms5000m -Xmx10000m"
+  command: bash -c "java -Djava.security.egd=file:/dev/./urandom -jar /app.jar"
